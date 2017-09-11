@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#define N 100
 typedef struct Node
 {
     int id;
@@ -34,15 +34,24 @@ void CreateFromTailCList(CLinkList l , int value)
 }
 
 int main() {
-    int a[] ={3 , 1 , 7 , 2 , 4 , 8 , 4};
+    int a[N] , start , m , n , i;
+    printf("please enter start , code , size !\n");
+    scanf("%d%d%d",&start , &m , &n);
+    printf("please enter the code of each person !\n");
+    for(i = 0 ;i < n ; i ++){
+        scanf("%d",&a[i]);
+    }
     CLinkList  linkList;
     InitCList(&linkList);
-    int i , m = 20 , n = 7;
     for( i = 0 ; i < n  ; i ++){    //@csk    after i ++ then check whether i < n
         CreateFromTailCList(linkList , a[i]);
     }
     Node* p = linkList;
     Node* temp;
+    while (-- start){
+        p = p->next;
+        if(p->next == linkList)p =linkList;
+    }
     while (n --){
         while (-- m){
             p = p->next;
