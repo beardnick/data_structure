@@ -12,7 +12,7 @@ typedef struct Node
 
 void InitCList(CLinkList  *l)
 {
-    *l = (Node*)malloc(sizeof(Node*));//do not miss * , because l is a pointer of Node*
+    *l = (Node*)malloc(sizeof(Node));//do not miss * , because l is a pointer of Node*
     (*l)->next = *l;
 }
 
@@ -21,7 +21,7 @@ void InitCList(CLinkList  *l)
 void CreateFromTailCList(CLinkList l , int value)
 {
     int count = 1;
-    Node* p = (Node*)malloc(sizeof(Node*));
+    Node* p = (Node*)malloc(sizeof(Node));
     p->data = value;
     p->next = l;
     Node* temp = l;
@@ -53,6 +53,7 @@ int main() {
         m = temp->data;
         p->next = temp->next;
         if(p->next == linkList )p = linkList;
+        if(p == linkList && p->next == linkList)break;//it will delete the head last
         free(temp);
     }
     return 0;
