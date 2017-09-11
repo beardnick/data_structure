@@ -33,20 +33,6 @@ void CreateFromTailCList(CLinkList l , int value)
     p->id = count;
 }
 
-//delect from the list
-
-void deleteFromList(CLinkList l , Node* p){
-    Node* s;
-    s = l;
-    while (s->next != p)s = s->next;
-    if(s->next != l){
-        s = p->next;
-        free(p);
-        p = s;
-    }
-}
-
-
 int main() {
     int a[] ={3 , 1 , 7 , 2 , 4 , 8 , 4};
     CLinkList  linkList;
@@ -55,19 +41,19 @@ int main() {
     for( i = 0 ; i < n  ; i ++){    //@csk    after i ++ then check whether i < n
         CreateFromTailCList(linkList , a[i]);
     }
-    int test;
     Node* p = linkList;
     Node* temp;
     while (n --){
         while (-- m){
             p = p->next;
-            if(p->next == linkList || p == linkList)p = p->next;
+            if(p->next == linkList )p = linkList;
         }
         temp = p->next;
         printf("%d ", temp->id);
         m = temp->data;
         p->next = temp->next;
-        //free(temp);
+        if(p->next == linkList )p = linkList;
+        free(temp);
     }
     return 0;
 }
