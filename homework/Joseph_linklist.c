@@ -1,7 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../List/CircleLinkList.h"
 #define N 100
+typedef struct Node
+{
+    int id;
+    int data;
+    struct Node* next;
+}Node  , *CLinkList;
+
+//initialize the list
+
+void InitCList(CLinkList  *l)
+{
+    *l = (Node*)malloc(sizeof(Node));//do not miss * , because l is a pointer of Node*
+    (*l)->next = *l;
+}
+
+//create from tail
+
+void CreateFromTailCList(CLinkList l , int value)
+{
+    int count = 1;
+    Node* p = (Node*)malloc(sizeof(Node));
+    p->data = value;
+    p->next = l;
+    Node* temp = l;
+    while(temp->next != l){
+        temp = temp->next;
+        count ++;
+    }
+    temp->next = p;
+    p->id = count;
+}
 
 int main() {
     int a[N] , start , m , n , i;
