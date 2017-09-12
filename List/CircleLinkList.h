@@ -1,5 +1,5 @@
-#ifndef CIRCLELINCKLIST_H_INCLUDED
-#define CIRCLELINCKLIST_H_INCLUDED
+#ifndef CIRCLELINKLIST_H_INCLUDED
+#define CIRCLELINKLIST_H_INCLUDED
 #include<stdlib.h>
 #include<stdio.h>
 
@@ -60,4 +60,4 @@ void PrintAllC(CLinkList l)
 
 
 
-#endif // CIRCLELINCKLIST_H_INCLUDED
+#endif // CIRCLELINKLIST_H_INCLUDED

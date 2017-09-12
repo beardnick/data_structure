@@ -1,5 +1,5 @@
-#ifndef LINEARLIST_H_INCLUDED
-#define LINEARLIST_H_INCLUDED
+#ifndef SQLIST_H_INCLUDED
+#define SQLIST_H_INCLUDED
 #define MAXSIZE 100
 #include<stdio.h>
 
@@ -87,4 +87,4 @@ void PrintAll(SeqList l)
 }
 
 
-#endif // LINEARLIST_H_INCLUDED
+#endif // SQLIST_H_INCLUDED

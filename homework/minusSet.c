@@ -1,46 +1,7 @@
 #include<stdio.h>
 #include <time.h>
 #include <stdlib.h>
-
-typedef struct  Node
-{
-    int data;
-    struct Node * next;
-}Node , *LinkList;
-
-//initialize the list
-//set next NULL
-
-void InitList(LinkList * l)
-{
-    *l = (Node*)malloc(sizeof(Node*));
-    (*l)->next = NULL;
-}
-
-void CreateFromTail(LinkList l , int value)
-{
-    Node* p = (Node*)malloc(sizeof(Node*));
-    p->data = value;
-    Node* tail;
-    tail = l;
-    while(tail->next != NULL)tail = tail->next;
-    tail->next = p;
-    p->next = NULL;
-}
-
-//print all the elems
-
-void PrintAll(LinkList l)
-{
-    Node* p;
-    p = l;
-    while( p->next != NULL)
-    {
-        p = p->next;
-        printf("%d ",p->data);
-    }
-    printf("\n");
-}
+#include "../List/LinkList.h"
 
 
 LinkList minusSet(LinkList la , LinkList lb)

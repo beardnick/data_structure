@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include"LinearList.h"
+#include"../List/SqList.h"
 int main()
 {
     SeqList l;
