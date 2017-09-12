@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include"../List/CircleLinckList.h"
+#include"../List/CircleLinkList.h"
 int main()
 {
     CLinkList l;

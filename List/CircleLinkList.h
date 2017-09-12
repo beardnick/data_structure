@@ -1,11 +1,18 @@
-#ifndef CIRCLELINKLIST_H_INCLUDED
-#define CIRCLELINKLIST_H_INCLUDED
+//
+// Created by asus on 2017/9/12.
+//
+
+#ifndef DATASTRUCTURE_CIRCLELINKLIST_H
+#define DATASTRUCTURE_CIRCLELINKLIST_H
+
+
 #include<stdlib.h>
 #include<stdio.h>
+#define T int
 
 typedef struct Node
 {
-    int data;
+    T data;
     struct Node* next;
 }Node  , *CLinkList;
 
@@ -19,7 +26,7 @@ void InitCList(CLinkList  *l)
 
 //create from head
 
-void  CreateFromHeadCList(CLinkList l , int value)
+void  CreateFromHeadCList(CLinkList l , T value)
 {
     Node* p = (Node*)malloc(sizeof(Node*));
     p->data = value;
@@ -35,7 +42,7 @@ void  CreateFromHeadCList(CLinkList l , int value)
 
 //create from tail
 
-void CreateFromTailCList(CLinkList l , int value)
+void CreateFromTailCList(CLinkList l , T value)
 {
     Node* p = (Node*)malloc(sizeof(Node*));
     p->data = value;
@@ -60,4 +67,4 @@ void PrintAllC(CLinkList l)
 
 
 
-#endif // CIRCLELINKLIST_H_INCLUDED
+#endif //DATASTRUCTURE_CIRCLELINKLIST_H

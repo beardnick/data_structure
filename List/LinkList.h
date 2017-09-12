@@ -1,13 +1,20 @@
-#ifndef LINKLIST_H_INCLUDED
-#define LINKLIST_H_INCLUDED
-#include<stdio.h>
-#include<stdlib.h>
+//
+// Created by asus on 2017/9/10.
+//
+
+#ifndef DATASTRUCTURE_LINKLIST_H
+#define DATASTRUCTURE_LINKLIST_H
+
 
 //define the struct
 
+#include <stdlib.h>
+#include <stdio.h>
+#define T int
+
 typedef struct  Node
 {
-    int data;
+    T data;
     struct Node * next;
 }Node , *LinkList;
 
@@ -23,7 +30,7 @@ void InitList(LinkList * l)
 //create from head
 
 
-void CreateFromHead(LinkList l , int value)
+void CreateFromHead(LinkList l , T value)
 {
     Node* p = (Node*)malloc(sizeof(Node*));
     p->data = value;
@@ -41,7 +48,7 @@ void CreateFromHead(LinkList l , int value)
 
 //create from tail
 
-void CreateFromTail(LinkList l , int value)
+void CreateFromTail(LinkList l , T value)
 {
     Node* p = (Node*)malloc(sizeof(Node*));
     p->data = value;
@@ -54,12 +61,12 @@ void CreateFromTail(LinkList l , int value)
 
 //insert a elem to the list
 
-int InseList(LinkList l , int index , int value)
+int InseList(LinkList l , int index , T value)
 {
     Node* s = (Node*)malloc(sizeof(Node*));
     s->data = value;
-         Node* p = l;
-        int  k;
+    Node* p = l;
+    int  k;
     if( index < 1)printf("the index is too small !\n");
     else
     {
@@ -72,8 +79,8 @@ int InseList(LinkList l , int index , int value)
             }
             else
             {
-                 p = p->next;
-            k++;
+                p = p->next;
+                k++;
             }
         }
 
@@ -98,7 +105,7 @@ void PrintAll(LinkList l)
 
 //find the elem by value
 
-int FindList(LinkList l , int value)
+int FindList(LinkList l , T value)
 {
     Node* p;
     p = l;
@@ -111,6 +118,4 @@ int FindList(LinkList l , int value)
     }
     return -1;
 }
-
-
-#endif // LINKLIST_H_INCLUDED
+#endif //DATASTRUCTURE_LINKLIST_H

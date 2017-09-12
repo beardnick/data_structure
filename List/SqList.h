@@ -1,14 +1,19 @@
-#ifndef SQLIST_H_INCLUDED
-#define SQLIST_H_INCLUDED
-#define MAXSIZE 100
+//
+// Created by asus on 2017/9/12.
+//
+
+#ifndef DATASTRUCTURE_SQLIST_H
+#define DATASTRUCTURE_SQLIST_H
 #include<stdio.h>
+#define MAXSIZE 100
+#define T int
 
 //define the struct
 //last is the index of the last elem in the list
 
 typedef struct
 {
-    int elem[MAXSIZE];
+    T elem[MAXSIZE];
     int last;
 }SeqList;
 
@@ -21,7 +26,7 @@ void InitList(SeqList *l)
 
 //insert an element to the list
 
-int InseList(SeqList* l , int i , int elem)
+int InseList(SeqList* l , int i , T elem)
 {
     if(i < 1 || i > l->last + 2 || l->last >= MAXSIZE)return 0;
     int  k ;
@@ -50,7 +55,7 @@ int DeleList(SeqList* l , int i )
 
 //find a key from the list
 
-int FindList(SeqList l  , int key)
+int FindList(SeqList l  , T key)
 {
     int k;
     for( k = 0 ; k <= l.last ; k ++)
@@ -86,5 +91,4 @@ void PrintAll(SeqList l)
     printf("\n");
 }
 
-
-#endif // SQLIST_H_INCLUDED
+#endif //DATASTRUCTURE_SQLIST_H

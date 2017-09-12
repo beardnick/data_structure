@@ -7,18 +7,19 @@
 
 #include <malloc.h>
 #include <stdio.h>
+#define T int
 
 typedef struct Node {
-    int data;
+    T data;
     struct Node* next;
-}Node , *LinkStack;    //@csk    * before LinkStack
+}Node , *LinkStack;    //@csk    * before Stack
 
 void InitStack(LinkStack *top){
     *top = (Node*)malloc(sizeof(Node*));
     (*top)->next = NULL;
 }
 
-void pushStack(LinkStack top , int value){
+void pushStack(LinkStack top , T value){
     Node*p = (Node*) malloc(sizeof(Node*));
     p->data = value;
     if(top->next == NULL){
@@ -33,7 +34,7 @@ void pushStack(LinkStack top , int value){
 
 int  popStack(LinkStack top){
     if(top->next != NULL){
-        int value;
+        T value;
         Node* p = top->next;
         top->next = p->next;
         value = p->data;
