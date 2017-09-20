@@ -118,4 +118,19 @@ int FindList(LinkList l , T value)
     }
     return -1;
 }
+
+//delete the node
+
+void delete(LinkList l , Node *p){
+    Node* s = l;
+    while (s->next != p && s->next != NULL)s = s->next;
+    if(s->next == NULL)
+    {
+        printf("the node is not in the list\n");
+        return;
+    }
+        s->next = p->next;
+        free(p);
+
+}
 #endif //DATASTRUCTURE_LINKLIST_H
