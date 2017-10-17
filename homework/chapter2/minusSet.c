@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include "../List/LinkList.h"
+#include "../../List/LinkList.h"
 
 
 LinkList minusSet(LinkList la , LinkList lb)
