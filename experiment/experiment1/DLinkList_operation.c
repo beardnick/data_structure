@@ -1,11 +1,5 @@
-//
-// Created by asus on 2017/9/13.
-//
-
-#ifndef DATASTRUCTURE_DLINKLIST_H
-#define DATASTRUCTURE_DLINKLIST_H
-
 #include <stdlib.h>
+#include <stdio.h>
 
 #define  T int
 
@@ -67,9 +61,9 @@ void insert(DLinkList l , T value , int position){
     if(counter == position - 1){
         temp->next = p->next;
         p->next = temp;
-        //  printf("insert OK\n");
+      //  printf("insert OK\n");
     } else{
-        // printf("insert fail\n");
+       // printf("insert fail\n");
     }
 
 }
@@ -100,11 +94,31 @@ void delete(DLinkList l , int position){
         free(temp);
         //printf("delete OK\n");
     } else{
-        // printf("delete fail\n");
+       // printf("delete fail\n");
     }
 }
 
-
-
-
-#endif //DATASTRUCTURE_DLINKLIST_H
+int main(){
+    DLinkList  l;
+    InitList(&l);
+    int cmd;
+    int position , value;
+    while (scanf("%d" ,&cmd)) {
+        switch (cmd){
+            case 0:
+                PrintAll(l);
+                break;
+            case 1:
+                scanf("%d%d" , &position , &value);
+                insert(l , value , position);
+                break;
+            case 2:
+                scanf("%d" , &position);
+                delete(l , position);
+                break;
+            default:
+                break;
+        }
+    }
+    return 0;
+}
