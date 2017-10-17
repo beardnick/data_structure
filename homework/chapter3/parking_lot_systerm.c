@@ -192,7 +192,7 @@ int main(){
                 //1 dollar per hour
                 fee(leaveCar);
             }
-                //all the cars thtr give way to the leaving car come back to the parking lot
+                //all the cars that give way to the leaving car come back to the parking lot
                 comeBack(&s , &temp);
             if(!isEmpty(q) && !isFull(s)){
                 arriveCar = get(q);
